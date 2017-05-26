@@ -32,11 +32,9 @@
 #import "MXSDKOptions.h"
 #import "MXBackgroundModeHandler.h"
 
-#ifdef MX_GA
 #import "GAI.h"
 #import "GAIFields.h"
 #import "GAIDictionaryBuilder.h"
-#endif
 
 NSUInteger const kMXFileVersion = 37;
 
