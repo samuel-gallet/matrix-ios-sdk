@@ -2266,8 +2266,10 @@ MXAuthAction;
                       success:(void (^)())success
                       failure:(void (^)(NSError *error))failure
 {
-    // Do an unban by resetting the user membership to "leave"
-    return [self kickUser:userId fromRoom:roomId reason:nil success:success failure:failure];
+    return [self doMembershipRequest:roomId
+                          membership:@"unban"
+                          parameters:@{@"user_id": userId}
+                             success:success failure:failure];
 }
 
 - (MXHTTPOperation*)createRoom:(NSString*)name
